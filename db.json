@@ -1,0 +1,51 @@
+{
+  "players": [
+    {
+      "name": "virat kohli",
+      "position": "batsman",
+      "id": 2
+    },
+    {
+      "name": "ms dhoni",
+      "position": "keeper batsman",
+      "id": 3
+    },
+    {
+      "name": "kl rahul",
+      "position": "batsman",
+      "id": 4
+    }
+  ],
+  "schedule": [
+    {
+      "id": 1,
+      "date": "20-02-2021",
+      "countries": "India Vs Pakistan",
+      "venue": "Mohali - Punjab"
+    },
+    {
+      "id": 2,
+      "date": "21-02-2021",
+      "countries": "India Vs Pakistan",
+      "venue": "Eden Gardens - Kolkata"
+    },
+    {
+      "id": 3,
+      "date": "2-03-2021",
+      "countries": "India Vs South Africa",
+      "venue": "Eden Gardens - Kolkata"
+    },
+    {
+      "id": 4,
+      "date": "5-03-2021",
+      "countries": "India Vs south Africa",
+      "venue": "Wankhede Stadium - Mumbai"
+    },
+    {
+      "id": 5,
+      "date": "8-03-2021",
+      "countries": "India Vs south Africa",
+      "venue": "Holkar Stadium - Indore"
+    }
+  ]
+}
