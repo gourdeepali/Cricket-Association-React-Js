@@ -26,7 +26,7 @@ export default function Schedule() {
 
   return (
     <div style={{width:800, marginLeft:250}}>
-      <h1>Match Schedules</h1>
+      <h1 style={{color:"#2c387e"}}>Match Schedules</h1>
       <TableContainer component={Paper} >
         <Table aria-label="simple table">
           <TableHead style={{background:"#2c387e" , color:"white"}}>

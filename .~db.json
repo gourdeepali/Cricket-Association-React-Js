@@ -34,6 +34,11 @@
       "name": "Virat kohli",
       "position": "Batsman",
       "id": 9
+    },
+    {
+      "name": "Ravindra Jadeja",
+      "position": "All rounder",
+      "id": 10
     }
   ],
   "schedule": [

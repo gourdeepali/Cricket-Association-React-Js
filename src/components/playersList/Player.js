@@ -9,6 +9,8 @@ import TableCell from "@material-ui/core/TableCell";
 import Paper from "@material-ui/core/Paper";
 import {Button } from "@material-ui/core"
 import Modal from '@material-ui/core/Modal';
+import TextField from '@material-ui/core/TextField';
+// import DeleteIcon from '@material-ui/icons/Delete';
 
 
 export default function Player() {
@@ -76,22 +78,25 @@ export default function Player() {
       style={{
         position: "absolute",
         width: 300,
-        height: 300,
-        backgroundColor: "#2c387e",
+        height: 400,
+        backgroundColor: "white",
         textAlign: "center",
         left: 50,
         top: 50
       }}
     >
       <div>
-        <h1 style={{ textDecoration: "underline" }}> Edit Player</h1>
+        <h1 style={{color:"#2c387e"}}> Edit Player</h1>
       </div>
       <br />
       <div>
         <form onSubmit={(event)=>{handleEditPlayer(event , editPlayer.id, editPlayer.name , editPlayer.position)}}>
-          <label>Player Name - </label>
-          <input
+          <TextField
             required
+            label="Player Name"
+            defaultValue="Name"
+            helperText="Enter Player Name"
+            variant="outlined"
             type="text"
             value={editPlayer.name}
             onChange={(e) => {
@@ -102,14 +107,19 @@ export default function Player() {
           <br />
           <br />
 
-          <label>Player Position - </label>
-          <input
+          <TextField
             required
+            label="Player Position"
+            defaultValue="Position"
+            helperText="Enter Player Position"
+            variant="outlined"
             type="text"
             value={editPlayer.position}
             onChange={(e) => setEditPlayer({ ...editPlayer, position: e.target.value })}
           />
-          <Button type="submit"> Edit Player </Button>
+          <br/>
+          <br />
+          <Button type="submit" color="secondary" variant="contained" size="large"> Edit Player </Button>
         </form>
       </div>
       <br />
@@ -123,10 +133,10 @@ export default function Player() {
 
   return (
     <div style={{width:800, marginLeft:250}}>
-      <h1>Players List</h1>
+      <h1 style={{color:"#2c387e"}}>Players List</h1>
       <TableContainer component={Paper}>
         <Table aria-label="simple table">
-          <TableHead style={{background:"#2c387e" , color: "white"}}>
+          <TableHead style={{background:"#2c387e" , color:"white"}}>
             <TableRow>
               <TableCell>No</TableCell>
               <TableCell align="center">Name</TableCell>
@@ -141,8 +151,13 @@ export default function Player() {
                 <TableCell component="th" scope="row"> {player.id}</TableCell>
                 <TableCell align="center">{player.name}</TableCell>
                 <TableCell align="center">{player.position}</TableCell>
-                <TableCell align="center">{<Button onClick={()=>{handleEdit(player)}} > Edit</Button>}| 
-                {<Button onClick={()=>{ handleRemove(player.id) }} >Remove</Button>} </TableCell>
+                <TableCell align="center">{<Button variant="outlined" color="secondary"
+                onClick={()=>{handleEdit(player)}} > Edit</Button>}| 
+                {<Button 
+                variant="contained"
+                color="secondary"
+                // startIcon={<DeleteIcon />}
+                onClick={()=>{ handleRemove(player.id) }} > Delete</Button>} </TableCell>
               </TableRow>
               )
             
@@ -155,8 +170,9 @@ export default function Player() {
         onClose={closeModal}
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
-      >
+      ><Paper>
         {body}
+        </Paper>
       </Modal>
     </div> 
   );

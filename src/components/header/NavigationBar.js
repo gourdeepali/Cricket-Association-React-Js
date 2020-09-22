@@ -15,10 +15,15 @@ const linkStyles = {
   fontface: "bold"
 };
 
+ let indicatoreValue = 1;
+
+
+
+
 function NavigationBar() {
   return (
     <Paper style={{ backgroundColor:"#2c387e"}}>
-      <Tabs value={0} indicatorColor="secondary" textColor="primary" centered>
+      <Tabs value={indicatoreValue} indicatorColor="secondary" centered>
         <Link to="/">
           <Tab label={home} style={linkStyles} />
         </Link>
